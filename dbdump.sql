@@ -29,7 +29,7 @@ CREATE TABLE `course` (
   `name` varchar(45) DEFAULT NULL,
   `ects` smallint DEFAULT NULL,
   PRIMARY KEY (`idcourse`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `course` (
 
 LOCK TABLES `course` WRITE;
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
-INSERT INTO `course` VALUES (1,'C++',5);
+INSERT INTO `course` VALUES (1,'C++',5),(2,'Java',5),(3,'JavaScript',3),(4,'C#',4),(6,'Databases',4);
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,15 +51,16 @@ DROP TABLE IF EXISTS `grade`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `grade` (
   `idgrade` int NOT NULL AUTO_INCREMENT,
-  `date` date DEFAULT NULL,
-  `idtstudent` int DEFAULT NULL,
+  `date_grade` date DEFAULT NULL,
+  `idstudent` int DEFAULT NULL,
   `idcourse` int DEFAULT NULL,
+  `grade` tinyint DEFAULT NULL,
   PRIMARY KEY (`idgrade`),
-  KEY `student_grade_idx` (`idtstudent`),
+  KEY `student_grade_idx` (`idstudent`),
   KEY `course_grade_idx` (`idcourse`),
   CONSTRAINT `course_grade` FOREIGN KEY (`idcourse`) REFERENCES `course` (`idcourse`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  CONSTRAINT `student_grade` FOREIGN KEY (`idtstudent`) REFERENCES `student` (`idstudent`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  CONSTRAINT `student_grade` FOREIGN KEY (`idstudent`) REFERENCES `student` (`idstudent`) ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,6 +69,7 @@ CREATE TABLE `grade` (
 
 LOCK TABLES `grade` WRITE;
 /*!40000 ALTER TABLE `grade` DISABLE KEYS */;
+INSERT INTO `grade` VALUES (1,'2023-03-16',1,1,4),(2,'2023-03-16',1,2,4),(4,'2023-03-16',3,2,4);
 /*!40000 ALTER TABLE `grade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +88,7 @@ CREATE TABLE `student` (
   `password` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idstudent`),
   UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,6 +97,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
+INSERT INTO `student` VALUES (1,'Teppo','Testi','t2tete','$2a$10$OBJCUv9BihhlKY1RyDGahuuuiuRPKTS3IDRRbUgr.RDM0xWFcVeZa'),(3,'Liisa','Testi','liisa01','$2a$10$9cBZpI5TvzxV9Wys9jKWL.wW4s.bYKYJTcO.x4P7R9OkJ.E6cPj26');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -107,4 +110,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-16 10:52:55
+-- Dump completed on 2023-03-16 13:49:13
