@@ -13,7 +13,7 @@ Hahmotelma <br>
 <img src="er_plan.png">
 <br>
 Lopullinen<br>
-<img src="er_diagram.png">
+<img src="er_diagram_v2.png">
 
 ### Oikeudet tietokantaan
 
@@ -21,3 +21,4 @@ Lopullinen<br>
 create user netuser@127.0.0.1 identified by 'netpass';
 grant all on peppidb.* to netuser@127.0.0.1;
 </pre>
+
