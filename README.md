@@ -13,7 +13,7 @@ Hahmotelma <br>
 <img src="er_plan.png">
 <br>
 Lopullinen<br>
-<img src="er_diagram.png">
+<img src="er_diagram_v2.png">
 
 ### Oikeudet tietokantaan
 
