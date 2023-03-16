@@ -9,8 +9,8 @@ Sovelluksen käyttöliittymä on seuraavanlainen
 
 ## ER-kaavio
 
-Hahmotelma
+Hahmotelma <br>
 <img src="er_plan.png">
-
-Lopullinen
+<br>
+Lopullinen<br>
 <img src="er_diagram.png">
