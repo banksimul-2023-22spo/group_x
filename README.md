@@ -6,3 +6,11 @@ Projektin aihe on yksinkertainen opiskelijarekisteri (vrt. Peppi)
 
 Sovelluksen käyttöliittymä on seuraavanlainen
 <img src="ui_kuva.png">
+
+## ER-kaavio
+
+Hahmotelma <br>
+<img src="er_plan.png">
+<br>
+Lopullinen<br>
+<img src="er_diagram.png">
