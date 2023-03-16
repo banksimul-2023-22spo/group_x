@@ -21,3 +21,4 @@ Lopullinen<br>
 create user netuser@127.0.0.1 identified by 'netpass';
 grant all on peppidb.* to netuser@127.0.0.1;
 </pre>
+
