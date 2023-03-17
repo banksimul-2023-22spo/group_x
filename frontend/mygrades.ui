@@ -1,38 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MyData</class>
- <widget class="QDialog" name="MyData">
+ <class>MyGrades</class>
+ <widget class="QDialog" name="MyGrades">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>860</width>
-    <height>651</height>
+    <width>742</width>
+    <height>572</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QTextEdit" name="textData">
+  <widget class="QTextEdit" name="textGrades">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>120</x>
      <y>120</y>
-     <width>491</width>
-     <height>431</height>
+     <width>381</width>
+     <height>321</height>
     </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>16</pointsize>
-    </font>
    </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>50</y>
+     <x>150</x>
+     <y>40</y>
      <width>311</width>
      <height>51</height>
     </rect>
@@ -43,7 +38,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Omat tiedot</string>
+    <string>Arvosanat</string>
    </property>
   </widget>
  </widget>

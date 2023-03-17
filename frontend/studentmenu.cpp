@@ -3,6 +3,7 @@
 #include "environment.h"
 
 #include <MyData.h>
+#include <MyGrades.h>
 
 StudentMenu::StudentMenu(QWidget *parent) :
     QDialog(parent),
@@ -63,3 +64,38 @@ void StudentMenu::getMyDataSlot(QNetworkReply *reply)
     myDataManager->deleteLater();
 }
 
+
+
+
+void StudentMenu::on_btnGrades_clicked()
+{
+    QString site_url=Environment::getBaseUrl()+"/studentgrade/"+username;
+    QNetworkRequest request((site_url));
+    //WEBTOKEN ALKU
+    request.setRawHeader(QByteArray("Authorization"),(token));
+    //WEBTOKEN LOPPU
+    myDataManager = new QNetworkAccessManager(this);
+
+    connect(myDataManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getMyGradesSlot(QNetworkReply*)));
+
+    reply = myDataManager->get(request);
+}
+
+void StudentMenu::getMyGradesSlot(QNetworkReply *reply)
+{
+    response_data=reply->readAll();
+    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+        QJsonArray json_array = json_doc.array();
+        QString grades;
+        foreach (const QJsonValue &value, json_array) {
+            QJsonObject json_obj = value.toObject();
+            grades += json_obj["name"].toString()+" | "+QString::number(json_obj["grade"].toInt())+" | "+QString::number(json_obj["ects"].toInt())+" | "+json_obj["date_grade"].toString()+"\r";
+        }
+
+    //ui->labelStudentInfo->setText(data);
+    MyGrades *objectMyData=new MyGrades(this);
+    objectMyData->setGrades(grades);
+    objectMyData->open();
+    reply->deleteLater();
+    myDataManager->deleteLater();
+}

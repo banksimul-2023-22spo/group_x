@@ -47,6 +47,19 @@
     <string>Omat tiedot</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="btnGrades">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>130</y>
+     <width>191</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Arvosanani</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

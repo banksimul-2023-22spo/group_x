@@ -43,11 +43,11 @@ void MainWindow::loginSlot(QNetworkReply *reply)
 {
     response_data=reply->readAll();
     qDebug()<<response_data;
-    if(QString::compare(response_data,"-4078")==0){
+    if(QString::compare(response_data,"-4078")==0 || response_data.length()==0){
         ui->labelInfo->setText("Virhe tietokantayhteydessä");
     }
     else {
-    if(QString::compare(response_data, "false")!=0 && response_data.length()>10){
+    if(QString::compare(response_data, "false")!=0){
         ui->labelInfo->setText("Login OK");
         token="Bearer "+response_data;
         qDebug()<<token;
