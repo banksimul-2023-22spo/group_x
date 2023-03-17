@@ -34,6 +34,19 @@
     <string>Tervetuloa</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="btnMyData">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>130</y>
+     <width>191</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Omat tiedot</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

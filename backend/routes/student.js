@@ -13,9 +13,9 @@ router.get('/',function(request,response){
     })
 });
 
-router.get('/:id',
+router.get('/:user',
     function (request, response) {
-        student.getById(request.params.id, function (err, dbResult) {
+        student.getById(request.params.user, function (err, dbResult) {
             if (err) {
                 response.json(err);
             } else {
