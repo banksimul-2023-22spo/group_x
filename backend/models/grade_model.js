@@ -7,8 +7,8 @@ const grade = {
   getById: function(id, callback) {
     return db.query('select idgrade,DATE_FORMAT(date_grade,"%d.%m.%Y") as date_grade,idstudent,idcourse,grade from grade where idgrade=?', [id], callback);
   },
-  getByStudentId:function(id,callback){
-    return db.query('select name,grade from course inner join grade on course.idcourse=grade.idcourse where idstudent=?',[id],callback);
+  getByUsername:function(user,callback){
+    return db.query('select name,grade,ects,DATE_FORMAT(date_grade,"%d.%m.%Y") as date_grade from course inner join grade on course.idcourse=grade.idcourse inner join student on student.idstudent=grade.idstudent where username=?',[user],callback);
   },
   add: function(grade, callback) {
     return db.query(

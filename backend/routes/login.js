@@ -13,7 +13,7 @@ router.post('/',
       
         login.checkPassword(user, function(err, dbResult) {
           if(err){
-            response.json(dbError);
+            response.json(err.errno);
           }
           else{
             if (dbResult.length > 0) {
