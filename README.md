@@ -22,3 +22,6 @@ create user netuser@127.0.0.1 identified by 'netpass';
 grant all on peppidb.* to netuser@127.0.0.1;
 </pre>
 
+## .env
+
+Huom! Tiedosto .env pitäisi oikeasti jättää pois GitReposta (ainakin julkisesta ja varsinkin jos siinä on salasanoja)
