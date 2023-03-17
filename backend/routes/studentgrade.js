@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const grade = require('../models/grade_model');
 
-router.get('/:id',function(request,response){
-    grade.getByStudentId(request.params.id,function(err,dbResult){
+router.get('/:user',function(request,response){
+    grade.getByUsername(request.params.user,function(err,dbResult){
         if(err){
             response.json(err);
         }
