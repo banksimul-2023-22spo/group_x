@@ -14,6 +14,7 @@ StudentMenu::StudentMenu(QWidget *parent) :
 
 StudentMenu::~StudentMenu()
 {
+    qDebug()<<"Menu object deleted";
     delete ui;
 }
 
