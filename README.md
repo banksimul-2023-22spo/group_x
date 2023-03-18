@@ -25,3 +25,10 @@ grant all on peppidb.* to netuser@127.0.0.1;
 ## .env
 
 Huom! Tiedosto .env pitäisi oikeasti jättää pois GitReposta (ainakin julkisesta ja varsinkin jos siinä on salasanoja)
+
+Tämän sovellusen **.env** on seuraavanlainen
+<pre>
+SQL_SERVER='mysql://netuser:netpass@db4free.net/peppidb'
+PORT=3000
+MY_TOKEN=e8IP8RwsnugR0Wt22K2YX9P8jDyPj/zVocZiIb97nOebNnhEv5fS4c5C2OzUFxBcuGgWY2HTF+u5lzTQUCRt7A==
+</pre>
