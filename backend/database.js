@@ -1,8 +1,9 @@
-const mysql=require('mysql2');
-const dotenv=require('dotenv');
-
-dotenv.config();
-
-const connection=mysql.createPool(process.env.SQL_SERVER);
-
-module.exports=connection;
+const mysql = require('mysql2');
+const connection = mysql.createPool({
+  host: '127.0.0.1',
+  user: 'netuser',
+  password: '123netpass?X',
+  database: 'peppidb',
+  port:'3306'
+});
+module.exports = connection;

@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 
-//app.use(authenticateToken);
+app.use(authenticateToken);
 //suojatut endpointit
 app.use('/course', courseRouter);
 app.use('/student', studentRouter);
