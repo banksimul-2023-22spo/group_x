@@ -32,3 +32,8 @@ SQL_SERVER='mysql://netuser:netpass@127.0.0.1/peppidb'
 PORT=3000
 MY_TOKEN=e8IP8RwsnugR0Wt22K2YX9P8jDyPj/zVocZiIb97nOebNnhEv5fS4c5C2OzUFxBcuGgWY2HTF+u5lzTQUCRt7A==
 </pre>
+
+## MyLogin library
+
+Alla suunnitelma librarylle 
+<img src="login_dll.png">
